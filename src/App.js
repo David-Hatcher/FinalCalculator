@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Header from './components/Header';
+import GradeBlock from './components/GradeBlock';
+import AddClass from './components/AddClass';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	window.data = {};
+	return (
+		<div className="App">
+			<header className="App-header">
+				<Header />
+			</header>
+			<div className='body grid md:grid-cols-3 h-3/6'>
+				<AddClass classNumber={1} beenClicked={true}/>
+			</div>
+		</div>
+	);
 }
 
 export default App;
