@@ -5,13 +5,13 @@ import AddGroup from './AddGroup';
 
 function GradeForm(props){
     const [classNum] = useState(props.classNumber ?? "Null");
-    const [groupCount,setGroupCount] = useState(0);
+    const [groupCount,setGroupCount] = useState(1);
     const [groups,setGroups] = useState({});
 
     const addGroup = (e) =>{
-        setGroupCount(groupCount + 1);
         let reWriteGroups = groups;
-        reWriteGroups[parseInt(groupCount) + 1] = {}
+        reWriteGroups[parseInt(groupCount)] = {}
+        setGroupCount(groupCount + 1);
         setGroups(reWriteGroups);
         console.log(groups)
     }

@@ -6,12 +6,12 @@ import './App.css';
 
 function App() {
 	const [classes,setClasses] = useState({});
-	const [classCount,setClassCount] = useState(0);
+	const [classCount,setClassCount] = useState(1);
 
 	const addAClass = () =>{
-		setClassCount(classCount + 1);
 		let reWriteClasses = classes;
-		reWriteClasses[parseInt(classCount) + 1] = {};
+		reWriteClasses[parseInt(classCount)] = {};
+		setClassCount(classCount + 1);
 		setClasses(reWriteClasses);
 		console.log(classCount);
 		console.log(classes)
