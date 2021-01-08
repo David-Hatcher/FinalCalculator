@@ -3,7 +3,7 @@
   background-color: #282c34;
 }
 
-body > #root > div {
+body > #root > div{
   height: 100vh;
 }
 

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 function FinalBlock(props){
-    const [classNum,setClassNum] = useState(props["classNumber"] ?? "Null");
+    const [classNum] = useState(props["classNumber"] ?? "Null");
     return(
-        <div className={'final-group-' + classNum}>
+        <div className={'final-class-' + classNum}>
         <div>
             <div className='groupLabel' style={{fontSize:'14px'}}>Final Weight:</div>
         </div>

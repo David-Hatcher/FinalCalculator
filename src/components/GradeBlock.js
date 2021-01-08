@@ -6,15 +6,14 @@ import StoreData from './StoreData';
 
 function GradeBlock(props){
 
-    const [classNum,setClassNum] = useState(props["classNumber"] ?? "Null");
-    window.data[classNum] = {}
+    const [classNum] = useState(props.classNumber ?? "Null");
     return(
-        <div className={'grade-block class-' + classNum + ' my-2'}>
+        <div className={`grade-block class-${classNum} my-2  border border-dashed`}>
             <h2>Class {classNum}</h2>
             <ClassName classNumber={classNum}/>
             <GradeForm classNumber={classNum}/>
             <div className='grid grid-cols-3 flex items-end justify-center'>
-                {/*<StoreData classNumber={classNum}/>*/}
+                <StoreData classNumber={classNum}/>
                 <GradeCalculator classNumber={classNum}/>
             </div>
         </div>

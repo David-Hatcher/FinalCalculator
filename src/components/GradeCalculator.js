@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 
 function GradeCalculator(props){
 
-    const [classNum,setClassNum] = useState(props["classNumber"] ?? "Null");
-    const [msg,setMsg] = useState('Final score needed for following grades');
+    const [classNum] = useState(props.classNumber ?? "Null");
+    const [msg] = useState('Final score needed for following grades');
     const [content, setContent] = useState('Uncalculated');
 
 

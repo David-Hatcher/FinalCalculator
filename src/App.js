@@ -5,14 +5,25 @@ import AddClass from './components/AddClass';
 import './App.css';
 
 function App() {
-	window.data = {};
+	const [classes,setClasses] = useState({});
+	const [classCount,setClassCount] = useState(0);
+
+	const addAClass = () =>{
+		setClassCount(classCount + 1);
+		let reWriteClasses = classes;
+		reWriteClasses[parseInt(classCount) + 1] = {};
+		setClasses(reWriteClasses);
+		console.log(classCount);
+		console.log(classes)
+	}
 	return (
 		<div className="App">
 			<header className="App-header">
 				<Header />
 			</header>
 			<div className='body grid md:grid-cols-3 h-3/6'>
-				<AddClass classNumber={1} beenClicked={true}/>
+				{Object.keys(classes).map(([key,value]) => <GradeBlock key={key} classNumber={key}/>)}
+				<AddClass classNumber={classCount} beenClicked={true} addClass={addAClass}/>
 			</div>
 		</div>
 	);
