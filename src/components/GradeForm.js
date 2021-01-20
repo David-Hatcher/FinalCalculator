@@ -19,7 +19,7 @@ function GradeForm(props){
         <div className='grade-form'>
             <form>
                 <div className='class1 content-center'>
-                    {Object.keys(groups).map(([key,value]) => <GroupBlock classNumber={classNum} key={key} groupNum={key}/>)}
+                    {Object.keys(groups).map(([key,value]) => <GroupBlock classNumber={classNum} key={key} groupNum={key} class={props.class}/>)}
                     <AddGroup classNumber={classNum} addGroup={addGroup}/>
                     <div className='finalGroup'>
                         <FinalBlock classNumber={classNum}/>

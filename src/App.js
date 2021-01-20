@@ -7,6 +7,14 @@ import './App.css';
 function App() {
 	const [classes,setClasses] = useState({});
 	const [classCount,setClassCount] = useState(1);
+	try {
+		let count = localStorage.getItem(classCount);
+		if(count == null){
+			throw 'No Count in Local Store';
+		}
+	} catch (error) {
+		console.log(error);
+	}
 
 	const addAClass = () =>{
 		let reWriteClasses = classes;
@@ -22,7 +30,7 @@ function App() {
 				<Header />
 			</header>
 			<div className='body grid md:grid-cols-3 h-3/6'>
-				{Object.keys(classes).map(([key,value]) => <GradeBlock key={key} classNumber={key}/>)}
+				{Object.keys(classes).map(([key,value]) => <GradeBlock key={key} classNumber={key} class={classes[key]}/>)}
 				<AddClass classNumber={classCount} beenClicked={true} addClass={addAClass}/>
 			</div>
 		</div>
