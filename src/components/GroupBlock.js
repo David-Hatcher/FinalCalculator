@@ -6,6 +6,12 @@ function GroupBlock(props){
     /*const [name,setName] = useState('');
     const [grade,setGrade] = useState('');
     const [weight, setWeight] = useState('');*/
+    const checkKeyUp = (event) => {
+        if (event.keyCode == 9 && props.groupNum == props.groupCount - 1){
+            console.log("Woah there buddy")
+            props.addGroup();
+        }
+    } 
     return (
         <div className={`grid grid-cols-3 space-x-1 class-${classNum}-group-${props.groupNum}`}>
             <div>
@@ -37,6 +43,7 @@ function GroupBlock(props){
                         className='group-weight-input border border-gray p-0.5 rounded-md w-16 md:w-max text-black'
                         type='input'
                         name='group-weight'
+                        onKeyDown={checkKeyUp}
                     />
                 </div>
             </div>
