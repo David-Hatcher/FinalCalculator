@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactDom from 'react-dom';
 import Header from './components/Header';
 import GradeBlock from './components/GradeBlock';
 import AddClass from './components/AddClass';
@@ -24,6 +25,7 @@ function App() {
 		console.log(classCount);
 		console.log(classes)
 	}
+	document.title = 'Final Calculator';
 	return (
 		<div className="App">
 			<header className="App-header">
